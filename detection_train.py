@@ -42,7 +42,7 @@ def train_net(config):
     from utils.logger import config_logger
     config_logger(os.path.join(save_path, "log.txt"))
 
-    model_prefix = os.path.join(save_path, "checkpoint")
+    model_prefix = os.path.join(save_path, "vg-checkpoint")
 
     # set up logger
     logger = logging.getLogger()

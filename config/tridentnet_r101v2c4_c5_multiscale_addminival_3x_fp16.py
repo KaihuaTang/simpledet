@@ -31,7 +31,7 @@ def get_config(is_train):
     class KvstoreParam:
         kvstore     = "local"
         batch_image = General.batch_image
-        gpus        = [0, 1, 2, 3, 4, 5, 6, 7]
+        gpus        = [0, 1]
         fp16        = General.fp16
 
     class NormalizeParam:
@@ -146,8 +146,8 @@ def get_config(is_train):
         memonger_until = "stage3_unit21_plus"
 
         class pretrain:
-            prefix = "pretrain_model/resnet-%d" % General.depth
-            epoch = 0
+            prefix = "experiments/tridentnet_r101v2c4_c5_multiscale_addminival_3x_fp16/checkpoint"
+            epoch = 18
             fixed_param = []
 
         def process_weight(sym, arg_params, aux_params):
