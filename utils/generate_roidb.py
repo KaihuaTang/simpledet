@@ -27,7 +27,7 @@ def parse_args():
 
 def generate_groundtruth_database(dataset_name, dataset_split):
     annotation_type = 'image_info' if 'test' in dataset_split else 'instances'
-    annotation_path = "data/%s/annotations/%s_%s.json" % (dataset_name, annotation_type, dataset_split)
+    annotation_path = "/data3/%s/annotations/%s_%s.json" % (dataset_name, annotation_type, dataset_split)
 
     dataset = COCO(annotation_path)
     img_ids = dataset.getImgIds()
@@ -68,7 +68,7 @@ def generate_groundtruth_database(dataset_name, dataset_split):
 
         split = dataset_split_mapping[dataset_split]
         roi_rec = {
-            'image_url': 'data/%s/images/%s/%s' % (dataset_name, split, im_filename),
+            'image_url': '/data3/%s/images/%s/%s' % (dataset_name, split, im_filename),
             'im_id': img_id,
             'h': im_h,
             'w': im_w,
